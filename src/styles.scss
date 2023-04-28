@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  max-width: 1280px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.textarea {
+  width: 94%;
+  min-height: 20vh;
+}
+.keyboard {
+
+  &__body {
+    width: fit-content;
+    border: 3px solid #000;
+    padding: 20px;
+  }
+
+  &__row {
+    display: flex;
+  }
+
+  &__col {
+    width: 70px;
+    height: 70px;
+    border: 1px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all linear 0.2s;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+    &:hover {
+      background-color: rgba(0,0,0,0.1);
+    }
+
+    &:active {
+      transform: scale(0.97,0.97);
+    }
+  }
+}
