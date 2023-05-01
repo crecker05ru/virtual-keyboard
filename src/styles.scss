@@ -13,6 +13,11 @@
   min-height: 20vh;
 }
 
+.info {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 400;
+}
 
 .keyboard {
 
@@ -85,8 +90,17 @@
     &_backspace {
       width: 170px;
     }
+
     &_tab{
       width: 90px;
+    }
+    
+    &_shift-left {
+      width: 170px;
+    }
+
+    &_shift-right{
+      width: 70px;
     }
   }
 }
@@ -94,12 +108,15 @@
 @keyframes press {
   0% {
     transform: scale(1,1);
+    background-color: rgba(0,0,0,0);
   }
   50% {
     transform: scale(0.9,0.9);
+    background-color: rgba(0,0,0,0.1);
   }
   100% {
     transform: scale(1,1);
+    background-color: rgba(0,0,0,0);
   }
 }
 
