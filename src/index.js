@@ -83,7 +83,6 @@ window.addEventListener('keydown', (e) => {
 
 root.addEventListener('click',(e) => {
   console.log('e.target',e.target)
-  let target = e.target
   let div = e.target.closest('div')
   if(root.contains(div) && div.classList.contains('keyboard__col')){
     if(e.target.innerText == 'CapsLock'){
@@ -104,15 +103,6 @@ root.addEventListener('click',(e) => {
       textarea.value += e.target.innerText
     }
   }
-  if(target.classList.contains('keyboard__body')){
-
-  }
-  let node = root.querySelector('.keyboard__col')
-  console.log('node.innerText',node.innerText)
-  if(e.target.contains(node)){
-    
-  }
-  
 })
 window.addEventListener('keyup', (e) => {
   for(let i = 0;i < keys.length;i++){
@@ -170,7 +160,7 @@ function capslockedMode(isCapsLocked){
       console.log('keys[i].innerText',keys[i].innerText)
       keys[i].innerText = isCapsLocked ? key.toUpperCase() : key.toLowerCase()
     }else {
-      keys[i].innerText = keys[i].innerText
+      keys[i].innerText
     }
     
   }
@@ -180,7 +170,6 @@ function drawKeyboard(language,upperCase) {
   let keyboardBody = document.createElement('div')
   keyboardBody.classList.add('keyboard__body')
   for(let i = 0;i < language.length;i++){
-    let row = language[i]
     let rowElement = document.createElement('div')
     rowElement.dataset.row = i
     rowElement.classList.add('keyboard__row')
