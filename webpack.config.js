@@ -1,6 +1,7 @@
 const webpack = require('webpack') 
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 const ASSET_PATH = process.env.ASSET_PATH || './assets';
 __webpack_public_path__ = process.env.ASSET_PATH;
@@ -30,12 +31,21 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env.ASSET_PATH': JSON.stringify(ASSET_PATH),
     }),
+    new ESLintPlugin()
   ],
   module: {
     rules: [
       {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          "style-loader",
+          "css-loader",
+          "sass-loader",
+        ],
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif|ico)$/i,
